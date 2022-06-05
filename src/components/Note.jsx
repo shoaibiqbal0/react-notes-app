@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 
-const Note = () => {
+const Note = (props) => {
   return (
     <Box
       bg={useColorModeValue("gray.100", "gray.900")}
@@ -22,12 +22,12 @@ const Note = () => {
       {/* Note Content */}
       <VStack>
         <Text w="100%" p="5" minH="200px">
-          This is content
+          {props.content}
         </Text>
       </VStack>
       {/* Note Footer */}
       <HStack p="3">
-        <Text>This is date</Text>
+        <Text>{props.date}</Text>
         <Spacer />
         <IconButton
           isRound="true"
