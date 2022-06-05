@@ -6,7 +6,11 @@ const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <VStack p="5" align="flex-end">
-      <IconButton icon={<FaSun />} onClick={toggleColorMode} />
+      <IconButton
+        icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+        onClick={toggleColorMode}
+        isRound
+      />
     </VStack>
   );
 };
