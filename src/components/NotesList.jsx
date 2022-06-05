@@ -5,7 +5,7 @@ import Note from "./Note";
 const NotesList = () => {
   return (
     <Flex justify="center">
-      <SimpleGrid columns={[1, 2, 3]} pt="5" spacingY="5" maxW="1000px">
+      <SimpleGrid columns={[1, 2, 3]} pt="5" spacing="5" maxW="1000px">
         <Note />
         <Note />
         <Note />

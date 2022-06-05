@@ -14,11 +14,10 @@ const Note = () => {
   return (
     <Box
       bg={useColorModeValue("gray.100", "gray.900")}
-      minW="230px"
+      minW="250px"
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
-      mx="5"
     >
       {/* Note Content */}
       <VStack>
