@@ -1,5 +1,6 @@
 import { Flex, SimpleGrid } from "@chakra-ui/react";
 import React, { useState } from "react";
+import AddNote from "./AddNote";
 import Note from "./Note";
 
 const NotesList = () => {
@@ -14,6 +15,7 @@ const NotesList = () => {
         {notes.map((note, index) => {
           return <Note key={index} date={note.date} content={note.content} />;
         })}
+        <AddNote />
       </SimpleGrid>
     </Flex>
   );
