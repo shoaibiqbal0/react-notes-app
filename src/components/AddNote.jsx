@@ -12,11 +12,31 @@ import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const AddNote = (props) => {
-  const [noteContent, setNoteContent] = useState();
+  const [noteContent, setNoteContent] = useState({
+    content: "",
+    date: "",
+  });
 
   const handleChange = (event) => {
-    setNoteContent(event.target.value);
+    const today = new Date();
+    const date =
+      today.getDate() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getFullYear();
+    const { name, value } = event.target;
+    setNoteContent((previousItems) => {
+      return {
+        ...previousItems,
+        [name]: value,
+        date: date,
+      };
+    });
+    console.log(noteContent.date);
   };
+
+  const handleClick = () => {};
 
   return (
     <Box
@@ -26,23 +46,31 @@ const AddNote = (props) => {
       overflow="hidden"
       borderRadius="lg"
     >
-      {/* Note Content */}
-      <VStack>
-        <Textarea
-          onChange={handleChange}
-          mt="5"
-          minH="180px"
-          maxW="220px"
-          resize="none"
-          name="noteContent"
-          value={noteContent}
-        />
-      </VStack>
-      {/* Note Footer */}
-      <HStack p="3">
-        <Spacer />
-        <IconButton isRound="true" bg="transparent" icon={<FaPlus />} />
-      </HStack>
+      <form>
+        {/* Note Content */}
+        <VStack>
+          <Textarea
+            onChange={handleChange}
+            mt="5"
+            minH="180px"
+            maxW="220px"
+            resize="none"
+            name="content"
+            value={noteContent.content}
+            placeholder="Add note.."
+          />
+        </VStack>
+        {/* Note Footer */}
+        <HStack p="3">
+          <Spacer />
+          <IconButton
+            onClick={handleClick}
+            isRound="true"
+            bg="transparent"
+            icon={<FaPlus />}
+          />
+        </HStack>
+      </form>
     </Box>
   );
 };

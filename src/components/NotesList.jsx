@@ -15,7 +15,7 @@ const NotesList = () => {
         {notes.map((note, index) => {
           return <Note key={index} date={note.date} content={note.content} />;
         })}
-        <AddNote />
+        <AddNote noteContent={setNotes} />
       </SimpleGrid>
     </Flex>
   );
