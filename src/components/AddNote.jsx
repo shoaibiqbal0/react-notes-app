@@ -62,31 +62,29 @@ const AddNote = (props) => {
       overflow="hidden"
       borderRadius="lg"
     >
-      <form>
-        {/* Note Content */}
-        <VStack>
-          <Textarea
-            onChange={handleChange}
-            mt="5"
-            minH="180px"
-            maxW="220px"
-            resize="none"
-            name="content"
-            value={noteContent.content}
-            placeholder="Add note.."
-          />
-        </VStack>
-        {/* Note Footer */}
-        <HStack p="3">
-          <Spacer />
-          <IconButton
-            onClick={handleClick}
-            isRound="true"
-            icon={<FaPlus />}
-            variant="ghost"
-          />
-        </HStack>
-      </form>
+      {/* Note Content */}
+      <VStack>
+        <Textarea
+          onChange={handleChange}
+          mt="5"
+          minH="180px"
+          maxW="220px"
+          resize="none"
+          name="content"
+          value={noteContent.content}
+          placeholder="Add note.."
+        />
+      </VStack>
+      {/* Note Footer */}
+      <HStack p="3">
+        <Spacer />
+        <IconButton
+          onClick={handleClick}
+          isRound="true"
+          icon={<FaPlus />}
+          variant="ghost"
+        />
+      </HStack>
     </Box>
   );
 };
