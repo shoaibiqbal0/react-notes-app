@@ -6,12 +6,14 @@ import {
   Text,
   Textarea,
   useColorModeValue,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const AddNote = (props) => {
+  const toast = useToast();
   const [noteContent, setNoteContent] = useState({
     content: "",
     date: "",
@@ -33,14 +35,28 @@ const AddNote = (props) => {
         date: date,
       };
     });
-    console.log(noteContent.date);
   };
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    if (noteContent.content === "") {
+      toast({
+        title: "Note field is empty.",
+        status: "error",
+        isClosable: true,
+        duration: 2000,
+      });
+    } else {
+      props.addNote(noteContent);
+      setNoteContent({
+        content: "",
+        date: "",
+      });
+    }
+  };
 
   return (
     <Box
-      bg={useColorModeValue("gray.100", "blue.900")}
+      bg={useColorModeValue("green.100", "blue.900")}
       minW="250px"
       borderWidth="1px"
       overflow="hidden"
@@ -66,8 +82,8 @@ const AddNote = (props) => {
           <IconButton
             onClick={handleClick}
             isRound="true"
-            bg="transparent"
             icon={<FaPlus />}
+            variant="ghost"
           />
         </HStack>
       </form>
