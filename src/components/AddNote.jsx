@@ -8,10 +8,16 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const AddNote = (props) => {
+  const [noteContent, setNoteContent] = useState();
+
+  const handleChange = (event) => {
+    setNoteContent(event.target.value);
+  };
+
   return (
     <Box
       bg={useColorModeValue("gray.100", "blue.900")}
@@ -22,7 +28,15 @@ const AddNote = (props) => {
     >
       {/* Note Content */}
       <VStack>
-        <Textarea mt="5" minH="180px" maxW="220px" resize="none" />
+        <Textarea
+          onChange={handleChange}
+          mt="5"
+          minH="180px"
+          maxW="220px"
+          resize="none"
+          name="noteContent"
+          value={noteContent}
+        />
       </VStack>
       {/* Note Footer */}
       <HStack p="3">
