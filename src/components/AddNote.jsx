@@ -56,7 +56,8 @@ const AddNote = (props) => {
   return (
     <Box
       bg={useColorModeValue("blue.200", "blue.900")}
-      minW="250px"
+      maxW="350px"
+      maxH="250px"
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
@@ -76,6 +77,17 @@ const AddNote = (props) => {
           placeholder="Add a note.."
           border="none"
           focusBorderColor="none"
+          maxLength="1000"
+          sx={{
+            "&::-webkit-scrollbar": {
+              width: "10px",
+              borderRadius: "0px",
+              backgroundColor: `rgba(0, 0, 0, 0.05)`,
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: `rgba(0, 0, 0, 0.05)`,
+            },
+          }}
         />
       </VStack>
       {/* Note Footer */}

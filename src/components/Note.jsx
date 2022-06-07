@@ -18,7 +18,8 @@ const Note = (props) => {
   return (
     <Box
       bg={useColorModeValue("yellow.100", "gray.600")}
-      minW="250px"
+      maxW="350px"
+      maxH="250px"
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
