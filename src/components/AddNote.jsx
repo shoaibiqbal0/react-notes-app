@@ -61,6 +61,8 @@ const AddNote = (props) => {
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
+      border="none"
+      boxShadow="lg"
     >
       {/* Note Content */}
       <VStack>
@@ -72,7 +74,9 @@ const AddNote = (props) => {
           resize="none"
           name="content"
           value={noteContent.content}
-          placeholder="Add note.."
+          placeholder="Add a note.."
+          border="none"
+          focusBorderColor="none"
         />
       </VStack>
       {/* Note Footer */}

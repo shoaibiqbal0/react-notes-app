@@ -18,6 +18,8 @@ const Note = (props) => {
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
+      border="none"
+      boxShadow="lg"
     >
       {/* Note Content */}
       <VStack>
