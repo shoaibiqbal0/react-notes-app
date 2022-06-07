@@ -55,7 +55,7 @@ const AddNote = (props) => {
 
   return (
     <Box
-      bg={useColorModeValue("green.100", "blue.900")}
+      bg={useColorModeValue("blue.200", "blue.900")}
       minW="250px"
       borderWidth="1px"
       overflow="hidden"
