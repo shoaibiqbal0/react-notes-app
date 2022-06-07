@@ -11,6 +11,10 @@ import React from "react";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 
 const Note = (props) => {
+  const handleClick = () => {
+    props.deleteNote(props.noteIndex);
+  };
+
   return (
     <Box
       bg={useColorModeValue("gray.100", "gray.900")}
@@ -34,7 +38,7 @@ const Note = (props) => {
         <IconButton
           isRound="true"
           bg="transparent"
-          icon={<RiDeleteBin2Fill />}
+          icon={<RiDeleteBin2Fill onClick={handleClick} />}
         />
       </HStack>
     </Box>

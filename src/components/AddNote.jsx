@@ -3,7 +3,6 @@ import {
   HStack,
   IconButton,
   Spacer,
-  Text,
   Textarea,
   useColorModeValue,
   useToast,
