@@ -22,7 +22,7 @@ const NotesList = () => {
 
   return (
     <Flex justify="center">
-      <SimpleGrid columns={[1, 3, 3]} spacing="5" mx="2">
+      <SimpleGrid columns={[1, 2, 3]} spacing="5" mx="2">
         {notes.map((note, index) => {
           return (
             <Note

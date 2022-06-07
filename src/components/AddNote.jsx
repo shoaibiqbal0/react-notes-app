@@ -3,6 +3,7 @@ import {
   HStack,
   IconButton,
   Spacer,
+  Text,
   Textarea,
   useColorModeValue,
   useToast,
@@ -12,6 +13,7 @@ import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const AddNote = (props) => {
+  const characterLimit = 150;
   const toast = useToast();
   const [noteContent, setNoteContent] = useState({
     content: "",
@@ -57,7 +59,8 @@ const AddNote = (props) => {
     <Box
       bg={useColorModeValue("blue.200", "blue.900")}
       maxW="350px"
-      maxH="250px"
+      minW="250px"
+      maxH="270px"
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
@@ -71,27 +74,18 @@ const AddNote = (props) => {
           mt="5"
           minH="180px"
           maxW="220px"
-          resize="none"
           name="content"
+          resize="none"
           value={noteContent.content}
           placeholder="Add a note.."
           border="none"
           focusBorderColor="none"
-          maxLength="1000"
-          sx={{
-            "&::-webkit-scrollbar": {
-              width: "10px",
-              borderRadius: "0px",
-              backgroundColor: `rgba(0, 0, 0, 0.05)`,
-            },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: `rgba(0, 0, 0, 0.05)`,
-            },
-          }}
+          maxLength="150"
         />
       </VStack>
       {/* Note Footer */}
       <HStack p="3">
+        <Text>{characterLimit - noteContent.content.length} Remaining</Text>
         <Spacer />
         <IconButton
           onClick={handleClick}

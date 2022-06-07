@@ -19,16 +19,16 @@ const Note = (props) => {
     <Box
       bg={useColorModeValue("yellow.100", "gray.600")}
       maxW="350px"
-      maxH="250px"
       borderWidth="1px"
       overflow="hidden"
       borderRadius="lg"
       border="none"
       boxShadow="lg"
+      h="max-content"
     >
       {/* Note Content */}
       <VStack>
-        <Text w="100%" p="5" minH="200px">
+        <Text w="100%" p="5" minH="200px" whiteSpace="pre-wrap">
           {props.content}
         </Text>
       </VStack>
