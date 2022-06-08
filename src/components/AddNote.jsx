@@ -41,6 +41,7 @@ const AddNote = (props) => {
 
   const handleClick = () => {
     if (noteContent.content === "") {
+      // Show toast if the note field is empty
       toast({
         title: "Note field is empty.",
         status: "error",
@@ -48,6 +49,7 @@ const AddNote = (props) => {
         duration: 2000,
       });
     } else {
+      // Add note to the array
       props.addNote(noteContent);
       setNoteContent({
         content: "",
