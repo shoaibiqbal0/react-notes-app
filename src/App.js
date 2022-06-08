@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./components/Header";
-import NotesList from "./components/NotesList";
+import Main from "./components/Main";
 
 const App = () => {
   return (
     <div>
       <Header />
-      <NotesList />
+      <Main />
     </div>
   );
 };
