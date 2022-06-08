@@ -13,7 +13,7 @@ const Header = () => {
           isRound
         />
       </VStack>
-      <VStack pb="20" pt="10" align="center">
+      <VStack pb="10" pt="10" align="center">
         <Text
           fontSize="6xl"
           fontWeight="bold"
