@@ -21,6 +21,7 @@ const AddNote = (props) => {
   });
 
   const handleChange = (event) => {
+    // Set the current date
     const today = new Date();
     const date =
       today.getDate() +
